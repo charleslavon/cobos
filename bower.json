@@ -1,0 +1,20 @@
+{
+  "name": "contacts",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "2.x.x",
+    "flight": "~1.1.0",
+    "requirejs": "~2.1.5",
+    "components-bootstrap": "3.x.x",
+    "bootcards": "~1.1.2",
+    "platform": "Polymer/platform#~0.3.1",
+    "hogan": "~3.0.1",
+    "jasmine-ajax": "~2.x.x",
+    "jquery-touch-events":"~1.0.1"
+  },
+  "devDependencies": {
+    "jasmine-flight": "~4.0.0",
+    "jasmine-jquery": "~2.1.0",
+    "jquery-mockjax": "~2.x.x"
+  }
+}

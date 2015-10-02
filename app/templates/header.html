@@ -1,0 +1,34 @@
+<!-- 
+  @author: 
+  @description: UI header
+
+  @required Data: 
+  @optional Data: 
+
+  @Additional Info: 
+ -->
+
+<div class="js-header">
+    <div class="breadcrumbs">
+
+        <div id="page_index">
+            <a href="#service">
+                <h3 id="header_text">{{page}}</h3>
+                <span class="chevron deactivate"></span>
+                <h3 class="detailsPage"></h3>
+            </a>
+        </div>
+         {{#username}}
+            <div class="cog-holder">
+                <span class="icon-cog" id="logout"></span>
+            </div>
+            <div id="login_details">
+             Logged in as : {{username}} 
+         
+        </div>
+         {{/username}}
+        
+
+
+    </div>
+</div>

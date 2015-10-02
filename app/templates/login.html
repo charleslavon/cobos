@@ -1,0 +1,35 @@
+<!-- 
+  @author: modigie
+  @description: Login UI
+
+  @required Data: username and password
+  @optional Data: 
+
+  @Additional Info: 
+ -->
+
+ <div class="js-login">
+    <div class="login-Wrapper">
+        <div class="login-status">{{LoginError}}</div>
+           
+        <form action="/" class="login-form" id="userLogin_Form">
+
+            <fieldset class="inputs">
+                <input type="text" placeholder="Username" name="j_username" required/>
+                <span class="form-glyph icon-user"></span>
+            </fieldset>
+
+
+            <fieldset class="inputs">
+                <input type="password" placeholder="Password" name="j_password" required/>
+                <span class="form-glyph icon-key"></span>
+            </fieldset>
+
+            <fieldset class="fieldset-gap">
+                <input type="submit" class="btn" id="Login_Btn" value="Login">
+            </fieldset>
+
+        </form>
+    </div>
+</div>
+ 
