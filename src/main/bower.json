@@ -1,5 +1,5 @@
 {
-  "name": "contacts",
+  "name": "project cobos",
   "version": "1.0.0",
   "dependencies": {
     "jquery": "2.x.x",
@@ -7,10 +7,8 @@
     "requirejs": "~2.1.5",
     "components-bootstrap": "3.x.x",
     "bootcards": "~1.1.2",
-    "platform": "Polymer/platform#~0.3.1",
     "hogan": "~3.0.1",
-    "jasmine-ajax": "~2.x.x",
-    "jquery-touch-events":"~1.0.1"
+    "jasmine-ajax": "~2.x.x"
   },
   "devDependencies": {
     "jasmine-flight": "~4.0.0",

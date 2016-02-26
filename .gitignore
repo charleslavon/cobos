@@ -3,9 +3,16 @@
 .codeenvy/
 .project
 .settings/
-
-
-
+src/main/node/
+src/main/node_modules/
+src/main/app/bower_components/
+src/main/webapp/css/
+src/main/webapp/fonts/
+src/main/webapp/images/
+src/main/webapp/js/
+src/main/webapp/templates
+src/main/webapp/WEB-INF/*
+src/main/webapp/bower_components/
 
 ###Some defaults from https://gist.github.com/octocat/9257657
 

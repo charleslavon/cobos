@@ -42,7 +42,7 @@ gulp.task('hogan',function(){
 });
 
 gulp.task('html_templates',['js'], function() {
-    return gulp.src('app/templates/*.html')
+    return gulp.src('app/templates/*')
         .pipe(compressor({
             'remove-intertag-spaces': true,
             'simple-bool-attr': true,
@@ -91,7 +91,8 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('moveFiles', function() {
-    return gulp.src(['app/robots.txt', 'app/favicon.ico'])
+    return gulp.src(['app/robots.txt', 'app/favicon.ico', 'app/web.xml', 'app/appengine-web.xml',
+'app/loggin.properties'])
         .pipe(gulp.dest('webapp/WEB-INF'));
 });
 

@@ -152,6 +152,73 @@
                 </executions>
             </plugin>
             
+            <!-- This plugin downloads/installs Node and NPM locally for your project, runs NPM install, 
+            	and then any combination of Bower, Grunt, Gulp, Jspm, Karma, or Webpack.
+            	
+		        https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
+            <plugin>
+		        <groupId>com.github.eirslett</groupId>
+		        <artifactId>frontend-maven-plugin</artifactId>
+		        <version>0.0.27</version>
+		        <configuration>
+		        	<workingDirectory>src/main</workingDirectory>
+		        </configuration>
+		        <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>v4.2.6</nodeVersion>
+                            <npmVersion>3.7.5</npmVersion>
+                        </configuration>
+                        <phase>prepare-package</phase>
+                    </execution>
+
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
+                    
+                    <execution>
+                        <id>bower install</id>
+                        <goals>
+                            <goal>bower</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                        <phase>prepare-package</phase>
+                    </execution>
+
+                    <execution>
+                        <id>gulp build</id>
+                        <goals>
+                            <goal>gulp</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>build</arguments>
+                        </configuration>
+                        <phase>prepare-package</phase>
+                    </execution>
+
+<!--                     <execution> -->
+<!--                         <id>javascript tests</id> -->
+<!--                         <goals> -->
+<!--                             <goal>karma</goal> -->
+<!--                         </goals> -->
+<!--                         <phase>test</phase> -->
+<!--                         <configuration> -->
+<!--                             <karmaConfPath>karma.conf.ci.js</karmaConfPath> -->
+<!--                         </configuration> -->
+<!--                     </execution> -->
+               </executions>
+		    </plugin>
+            
             
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
