@@ -38,7 +38,7 @@ gulp.task('templates', function() {
 gulp.task('hogan',function(){
     gulp.src('app/js/component/templates.js')
          .pipe(removeLines({'filters':[/require\(['"]hogan\/lib\/hogan/]}))
-         .pipe(gulp.dest('webapp/templates'));
+         .pipe(gulp.dest('webapp/static/templates'));
 });
 
 gulp.task('html_templates',['js'], function() {
@@ -49,7 +49,7 @@ gulp.task('html_templates',['js'], function() {
             'compress-js':false,
             'compress-css': true
         }))
-        .pipe(gulp.dest('webapp/templates'));
+        .pipe(gulp.dest('webapp/static/templates'));
 
 });
 
@@ -69,7 +69,7 @@ gulp.task('sass', function () {
 	  gulp.src('app/css/sass/**/*.scss')
 	    .pipe(sass().on('error', sass.logError))
 	    .pipe(sass({outputStyle: 'compressed'}))
-	    .pipe(gulp.dest('webapp/css'));
+	    .pipe(gulp.dest('webapp/static/css'));
 });
 
 
@@ -81,29 +81,29 @@ gulp.task('js', ['sass','images', 'fonts','templates','hogan'], function() {
             'mangle': false
         }))
         .pipe(compressor())
-        .pipe(gulp.dest('webapp/js'));
+        .pipe(gulp.dest('webapp/static/js'));
 });
 
 
 gulp.task('fonts', function() {
     return gulp.src(['app/fonts/*.*'])
-        .pipe(gulp.dest('webapp/fonts'));
+        .pipe(gulp.dest('webapp/static/fonts'));
 });
 
 gulp.task('moveFiles', function() {
     return gulp.src(['app/robots.txt', 'app/favicon.ico', 'app/web.xml', 'app/appengine-web.xml',
-'app/loggin.properties'])
+'app/logging.properties'])
         .pipe(gulp.dest('webapp/WEB-INF'));
 });
 
 gulp.task('images', ['bower'], function() {
     return gulp.src(['app/images/**/*'])
-        .pipe(gulp.dest('webapp/images'));
+        .pipe(gulp.dest('webapp/static/images'));
 });
 
 gulp.task('bower', function() {
     return bower({
-        directory: 'webapp/bower_components'
+        directory: 'webapp/static/bower_components'
     });
 });
 
