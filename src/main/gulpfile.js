@@ -55,14 +55,14 @@ gulp.task('html_templates',['js'], function() {
 
 
 gulp.task('html', ['html_templates'], function() {
-    return gulp.src(['app/404.html', 'app/index.html'])
+    return gulp.src(['app/404.html', 'app/index.html', 'app/robots.txt', 'app/favicon.ico'])
         .pipe(compressor({
             'remove-intertag-spaces': true,
             'simple-bool-attr': true,
             'compress-js': true,
             'compress-css': true
         }))
-        .pipe(gulp.dest('webapp/WEB-INF'));
+        .pipe(gulp.dest('webapp'));
 });
 
 gulp.task('sass', function () {
@@ -91,8 +91,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('moveFiles', function() {
-    return gulp.src(['app/robots.txt', 'app/favicon.ico', 'app/web.xml', 'app/appengine-web.xml',
-'app/logging.properties'])
+    return gulp.src(['app/web.xml', 'app/appengine-web.xml'])
         .pipe(gulp.dest('webapp/WEB-INF'));
 });
 
