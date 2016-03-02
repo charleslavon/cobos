@@ -54,8 +54,8 @@ gulp.task('html_templates',['js'], function() {
 });
 
 
-gulp.task('html', ['html_templates'], function() {
-    return gulp.src(['app/404.html', 'app/index.html', 'app/robots.txt', 'app/favicon.ico'])
+gulp.task('files_icons', ['html_templates'], function() {
+    return gulp.src(['app/robots.txt', 'app/favicon.ico'])
         .pipe(compressor({
             'remove-intertag-spaces': true,
             'simple-bool-attr': true,
@@ -108,7 +108,7 @@ gulp.task('bower', function() {
 
 
 gulp.task('build', ['clean'], function() {
-    gulp.start('html'); //all the tasks are chained together, starting with bower and ending with js
+    gulp.start('files_icons'); //all the tasks are chained together
     gulp.start('moveFiles');
     
 });
