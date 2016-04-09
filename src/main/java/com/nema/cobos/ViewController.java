@@ -13,11 +13,22 @@ public class ViewController {
 	@Value("${application.message:Default Value}")
 	private String message = "Will be overwritten by property file value";
 	
+//	@RequestMapping("/")
+//	public String mainView() {
+//		return "index";
+//	}
+
 	@RequestMapping("/")
-	public String mainView() {
-		return "index";
+	public String home() {
+		return "home";
 	}
 
+	@RequestMapping("/az-picker")
+	public String azPicker() {
+		return "az-picker";
+	}
+
+	
 	@RequestMapping("/welcome")
 	public String welcome(Map<String, Object> model) {
 		model.put("time", new Date());
