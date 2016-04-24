@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google" value="notranslate">
 
-  <title>Starter Template for Bootcards</title>
+  <title>Cobos</title>
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   
@@ -14,27 +14,94 @@
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
 
-  <link rel="import" id="header-import" href="static/templates/header.html">
-  <link rel="import" id="dashboard-import" href="static/templates/dashboard.html">
-  <link rel="import" id="footer-import" href="static/templates/footer.html">
+  <link rel="import" id="header-import" href="{{appRoot}}/static/templates/header.html">
+  <link rel="import" id="dashboard-import" href="{{appRoot}}/static/templates/dashboard.html">
+  <link rel="import" id="footer-import" href="{{appRoot}}/static/templates/footer.html">
 </head>
 
 <body>
 
   <div id="header"></div>
+<div class="container bootcards-container" id="main">
+	<div class="row">
+		<div class="bootcards-cards">
+			<div class="col-sm-6">
+				<div id="dashboard" class="panel panel-default bootcards-summary">
 
-  <div id="container-main" class="container bootcards-container push-right">
-  </div><!--container-->
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-xs-6 col-sm-4">
+								<a class="bootcards-summary-item" href="{{appRoot}}/contacts"> <i
+									class="fa fa-3x fa-users"></i>
+									<h4>
+										<span>Contactos</span>
+									</h4>
+									<span class="label label-info">40</span>
+								</a>
+							</div>
+							<div class="col-xs-6 col-sm-4">
+								<a class="bootcards-summary-item" href="{{appRoot}}/companies"> <i
+									class="fa fa-3x fa-building-o"></i>
+									<h4>
+										<span>Empresas</span>
+									</h4>
+									<span class="label label-info">20</span>
+								</a>
+							</div>
+							<div class="col-xs-6 col-sm-4">
+								<a class="bootcards-summary-item" href="{{appRoot}}/notes"> <i
+									class="fa fa-3x fa-clipboard"></i>
+									<h4>
+										<span>Notas</span>
+									</h4>
+									<span class="label label-info">187</span>
+								</a>
+							</div>
+						</div>
 
+					</div>
 
-    <!-- Bootstrap & jQuery core JavaScript
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="panel panel-default bootcards-chart">
+
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							Se puede buscar a una persona, nota, o empresa
+						</h3>
+						<input autofocus type=text" class="form-control"></input>
+					</div>
+					<div class="panel-footer">
+				        <button class="btn btn-default btn-block"
+				          onClick="alert('serach')">
+				          <i class="fa fa-search"></i>Busca
+				        </button>        
+			       </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="navbar navbar-default navbar-fixed-bottom" display="none">
+		<div class="container">
+			<div class="bootcards-desktop-footer clearfix">
+				<p class="pull-left">
+					Custom Tech by <a target="_blank"
+						href="http://linkedin.com/in/clgarrett">@charleslavon</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap & jQuery core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Bootcards JS -->
-    <script src="../src/js/bootcards.js"></script>
+    <script src="{{appRoot}}/static/bower_components/bootcards/src/js/bootcards.js"></script>
 
     <!--recommended: FTLabs FastClick library-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.3/fastclick.min.js"></script>
@@ -42,8 +109,8 @@
     <script type="text/javascript">
 
       insertTemplate("#header-import", 'div[role="navigation"]', "#header");
-      appendTemplate("#dashboard-import", "#dashboard", "#container-main");
-      appendTemplate("#footer-import", "#footer", "#container-main");
+//       appendTemplate("#dashboard-import", "#dashboard", "#container-main");
+//       appendTemplate("#footer-import", "#footer", "#container-main");
       
       function insertTemplate(importSelector, contentSelector, parentSelector) {
         var link = document.querySelector(importSelector);
@@ -52,16 +119,16 @@
           var el = content.querySelector(contentSelector);
 
           document.body.insertBefore(el.cloneNode(true), document.querySelector(parentSelector));
-      }
+       }
       
-      function appendTemplate(importSelector, contentSelector, parentSelector) {
-        var link = document.querySelector(importSelector);
-         var content = link.import;
+//       function appendTemplate(importSelector, contentSelector, parentSelector) {
+//         var link = document.querySelector(importSelector);
+//          var content = link.import;
 
-        var el = content.querySelector(contentSelector);
+//         var el = content.querySelector(contentSelector);
 
-        document.body.appendChild(el.cloneNode(true), document.querySelector(parentSelector));
-      }
+//         document.body.appendChild(el.cloneNode(true), document.querySelector(parentSelector));
+//       }
       
       /*
        * Initialize Bootcards.

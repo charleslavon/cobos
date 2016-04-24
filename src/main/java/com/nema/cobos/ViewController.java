@@ -3,6 +3,8 @@ package com.nema.cobos;
 import java.util.Date;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +21,9 @@ public class ViewController {
 //	}
 
 	@RequestMapping("/")
-	public String home() {
+	public String home(Map<String, Object> model, HttpServletRequest request) {
+		model.put("appRoot", request.getContextPath());
+		
 		return "home";
 	}
 
